@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import AppConfig from '../config'
 import healthRoute from '../routes/healthRoute'
+import coffeeShopRoute from '../routes/coffeeShopRoutes'
 import { createServer } from 'http'
 
 dotenv.config()
@@ -31,6 +32,7 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json({ limit: AppConfig.BODY_PARSER_LIMIT }))
 
 app.use('/api/healthcheck', healthRoute)
+app.use('/api/coffee-shops', coffeeShopRoute)
 
 const PORT = process.env.PORT || 8000
 const httpServer = createServer(app)

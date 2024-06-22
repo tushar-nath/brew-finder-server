@@ -1,20 +1,20 @@
 import { Document } from 'mongoose'
 
-export interface IUser extends Document {
+export interface IProduct {
   name: string
-  username: string
-  email: string
-  password: string
+  price: number
+  category: string
 }
 
-export interface IPoll extends Document {
-  question: string
-  options: { text: string; votes: number }[]
-  createdBy: IUser['_id']
+export interface ILocation {
+  address: string
+  latitude: number
+  longitude: number
 }
 
-export interface IMessage extends Document {
-  text: string
+export interface ICoffeeShop extends Document {
   name: string
-  socketID: string
+  location: ILocation
+  rating: number
+  products: IProduct[]
 }
