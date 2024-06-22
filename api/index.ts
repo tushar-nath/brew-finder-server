@@ -14,7 +14,7 @@ const app = express()
 // Set up sessions to store user data
 app.use(
   session({
-    secret: 'quikpoll-session',
+    secret: 'brew-finder-session',
     resave: true,
     saveUninitialized: true,
   })
