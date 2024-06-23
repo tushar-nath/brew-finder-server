@@ -16,7 +16,7 @@ export class CoffeeShopService {
 
   static async listCoffeeShops(): Promise<ICoffeeShop[]> {
     await clientPromise
-    return CoffeeShop.find().exec()
+    return CoffeeShop.find({}, { products: 0 }).exec()
   }
 
   static async updateCoffeeShop(
